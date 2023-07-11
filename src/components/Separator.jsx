@@ -14,6 +14,6 @@ Separator.propTypes = {
 };
 
 Separator.defaultProps = {
-  img: "../src/assets/img/wave-line.svg",
+  img: "../assets/img/wave-line.svg",
 };
 export default Separator;
