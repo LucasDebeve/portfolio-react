@@ -5,6 +5,26 @@ export const content = {
   lastname: "DEBEVE",
   email: "lucas.debeve2003@gmail.com",
   phone: "06 21 35 10 87",
+  networks: [
+    {
+      id: 1,
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/lucas-debeve-b05914208/",
+      icon: "fa-linkedin",
+    },
+    {
+      id: 2,
+      name: "GitHub",
+      link: "https://github.com/LucasDebeve",
+      icon: "fa-github",
+    },
+    {
+      id: 3,
+      name: "YouTube",
+      link: "https://www.youtube.com/channel/UChHoSpKl9cKCEYsbIRXlsVA",
+      icon: "fa-youtube",
+    },
+  ],
   presentation:
     "Je m’appelle Lucas Debeve, je suis actuellement étudiant en BUT Informatique. Dire que je suis passionné par l’informatique serait pour moi trop généraliste, en effet, je me spécialise plutôt vers le développement web fullstack ainsi que la data. <br /><br /> En plus de l’informatique, j’aime beaucoup faire du sport comme le volley-ball ou le tennis. Je pratique ce premier sport depuis près de 10 ans à un rythme très soutenu.<br /><br /> En parallèle de ces activités, je fais également de la photographie, du montage vidéo, de la sculpture, et de la modélisation 3D.",
   skillsCategory: [
@@ -182,7 +202,7 @@ export const content = {
       id: 1,
       title: "Portfolio",
       link: "/",
-      img: "./src/assets/img/youtube-downloader.jpg",
+      img: "./src/assets/img/portfolio.jpg",
       technologies: [1, 2, 3, 4],
       year: 2023,
     },

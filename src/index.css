@@ -1,14 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700;800&display=swap");
 @import "./styles/variables.css";
 @import "./components/Navbar.css";
 @import "./components/Card.css";
 @import "./components/separator.css";
 @import "./components/multiFilters.css";
 @import "./components/animatedList.css";
+@import "./components/footer.css";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Karla", sans-serif;
 }
 
 html {
@@ -16,7 +19,6 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   overflow-x: hidden;
@@ -32,11 +34,15 @@ body {
   align-items: center;
   gap: 0.625rem;
   flex-shrink: 0;
+  background-image: url("./assets/img/luminary.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero__title {
   font-size: 2rem;
   font-weight: 700;
+  color: var(--lighter-color);
 }
 
 @media screen and (min-width: 768px) {

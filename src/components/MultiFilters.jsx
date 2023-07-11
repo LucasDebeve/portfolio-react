@@ -5,7 +5,6 @@ import AnimatedList from "./AnimatedList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence } from "framer-motion";
 
-
 function MultiFilters({ items, categories, className }) {
   const [selectedFilters, setSelectedFilters] = React.useState([]);
   const [filteredItems, setFilteredItems] = React.useState(items);

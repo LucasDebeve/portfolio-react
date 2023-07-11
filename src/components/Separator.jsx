@@ -14,6 +14,6 @@ Separator.propTypes = {
 };
 
 Separator.defaultProps = {
-  img: "https://www.sciencenews.org/wp-content/uploads/2022/11/top-sapce-images_feat-1030x580.jpg",
+  img: "../src/assets/img/wave-line.svg",
 };
 export default Separator;

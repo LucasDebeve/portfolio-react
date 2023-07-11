@@ -1,0 +1,14 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--darker-color);
+}
+
+footer a {
+    color: var(--lighter-color);
+    text-decoration: none;
+}
