@@ -32,6 +32,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 3rem 1rem;
+  width: 100%;
 }
 
 .multi-filters__items .multi-filters__item {

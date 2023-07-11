@@ -3,7 +3,6 @@
 @import "./components/Card.css";
 @import "./components/separator.css";
 @import "./components/multiFilters.css";
-@import "./components/fade.css";
 
 * {
   margin: 0;

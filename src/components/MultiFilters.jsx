@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import MultiFiltersItem from "./MultiFiltersItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Fade from "./Fade";
+import { AnimatePresence } from "framer-motion";
 
 function MultiFilters({ items, categories }) {
   const [selectedFilters, setSelectedFilters] = React.useState([]);
@@ -53,27 +53,29 @@ function MultiFilters({ items, categories }) {
       <div className="multi-filters__items">
         {items.map((item) => {
           return (
-            <Fade visible={filteredItems.includes(item)} key={`fade-${item.id}`}>
-              <MultiFiltersItem keyItem={`items-${item.id}`} item={item}>
-                {item.icon &&
-                  (["fa-language", "fa-code", "fa-database"].includes(
-                    item.icon
-                  ) ? (
-                    <FontAwesomeIcon
-                      icon={`fa-solid ${item.icon}`}
-                      size="4x"
-                      fixedWidth
-                    />
-                  ) : (
-                    <FontAwesomeIcon
-                      icon={`fa-brands ${item.icon}`}
-                      size="4x"
-                      fixedWidth
-                    />
-                  ))}
-                {item.img && <img src={item.img} alt={item.name} />}
-              </MultiFiltersItem>
-            </Fade>
+            <AnimatePresence key={`animate-${item.id}`}>
+              {filteredItems.includes(item) && (
+                <MultiFiltersItem keyItem={`items-${item.id}`} item={item}>
+                  {item.icon &&
+                    (["fa-language", "fa-code", "fa-database"].includes(
+                      item.icon
+                    ) ? (
+                      <FontAwesomeIcon
+                        icon={`fa-solid ${item.icon}`}
+                        size="4x"
+                        fixedWidth
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={`fa-brands ${item.icon}`}
+                        size="4x"
+                        fixedWidth
+                      />
+                    ))}
+                  {item.img && <img src={item.img} alt={item.name} />}
+                </MultiFiltersItem>
+              )}
+            </AnimatePresence>
           );
         })}
       </div>

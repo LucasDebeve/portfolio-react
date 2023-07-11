@@ -1,12 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { motion, AnimatePresence } from "framer-motion";
 
 function MultiFiltersItem({ keyItem, item, children }) {
   return (
-    <div key={keyItem} className="multi-filters__item tooltip">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      key={keyItem}
+      className="multi-filters__item tooltip"
+    >
       {children}
       <span className="tooltiptext">{item.name}</span>
-    </div>
+    </motion.div>
   );
 }
 
