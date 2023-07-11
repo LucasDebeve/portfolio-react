@@ -34,6 +34,9 @@ function App() {
         <MultiFilters items={content.skills} categories={content.skillsCategory} />
       </Card>
       <Separator></Separator>
+      <Card id="projects" title="Mes projets">
+        <MultiFilters items={content.projects} categories={content.technologies} className="big"/>
+      </Card>
     </>
   );
 }

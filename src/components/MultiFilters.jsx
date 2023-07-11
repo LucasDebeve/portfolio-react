@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import MultiFiltersItem from "./MultiFiltersItem";
+import AnimatedList from "./AnimatedList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence } from "framer-motion";
 
-function MultiFilters({ items, categories }) {
+
+function MultiFilters({ items, categories, className }) {
   const [selectedFilters, setSelectedFilters] = React.useState([]);
   const [filteredItems, setFilteredItems] = React.useState(items);
 
@@ -25,7 +27,11 @@ function MultiFilters({ items, categories }) {
     if (selectedFilters.length > 0) {
       let tempItems = selectedFilters.map((selectedCategory) => {
         let temp = items.filter((item) =>
-          item.category.includes(selectedCategory)
+          item.category
+            ? item.category.includes(selectedCategory)
+            : item.technologies
+            ? item.technologies.includes(selectedCategory)
+            : false
         );
         return temp;
       });
@@ -55,7 +61,12 @@ function MultiFilters({ items, categories }) {
           return (
             <AnimatePresence key={`animate-${item.id}`}>
               {filteredItems.includes(item) && (
-                <MultiFiltersItem keyItem={`items-${item.id}`} item={item}>
+                <MultiFiltersItem
+                  className={className + (item.title ? "" : " tooltip")}
+                  keyItem={`items-${item.id}`}
+                  item={item}
+                  href={item.link ? item.link : null}
+                >
                   {item.icon &&
                     (["fa-language", "fa-code", "fa-database"].includes(
                       item.icon
@@ -73,6 +84,10 @@ function MultiFilters({ items, categories }) {
                       />
                     ))}
                   {item.img && <img src={item.img} alt={item.name} />}
+                  {item.title && <h3>{item.title}</h3>}
+                  {item.technologies && (
+                    <AnimatedList items={item.technologies} />
+                  )}
                 </MultiFiltersItem>
               )}
             </AnimatePresence>
@@ -86,10 +101,13 @@ function MultiFilters({ items, categories }) {
 MultiFilters.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      category: PropTypes.arrayOf(PropTypes.number).isRequired,
-      name: PropTypes.string.isRequired,
+      category: PropTypes.arrayOf(PropTypes.number),
+      name: PropTypes.string,
       icon: PropTypes.string,
       img: PropTypes.string,
+      title: PropTypes.string,
+      link: PropTypes.string,
+      year: PropTypes.number,
     }).isRequired
   ).isRequired,
   categories: PropTypes.arrayOf(
@@ -98,6 +116,11 @@ MultiFilters.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
+  className: PropTypes.string,
+};
+
+PropTypes.defaultProps = {
+  className: "",
 };
 
 export default MultiFilters;

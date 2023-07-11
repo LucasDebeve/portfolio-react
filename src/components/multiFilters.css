@@ -8,6 +8,8 @@
   justify-content: center;
   margin-bottom: 1rem;
   gap: 0.625rem;
+  max-height: 6.875rem;
+  overflow-y: auto;
 }
 
 .multi-filters__filters button {
@@ -37,8 +39,35 @@
 
 .multi-filters__items .multi-filters__item {
   display: flex;
-  transition: all 0.3s ease-in-out;
-  animation: fade-in 0.5s ease-in-out;
+  color: var(--lighter-color);
+  transition: transform 0.3s ease-in-out;
+}
+
+.multi-filters__item:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+
+.multi-filters__item a {
+  color: var(--lighter-color);
+  text-decoration: none;
+}
+
+.multi-filters__item.big {
+  position: relative;
+  flex-direction: column;
+  background-color: #303030;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.3125rem;
+}
+
+.multi-filters__item.big img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 0.3125rem;
 }
 
 .tooltip {
@@ -65,4 +94,10 @@
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
+  .multi-filters__item.big {
+    width: calc(50% - 1rem);
+  }
 }

@@ -1,0 +1,57 @@
+ul.technologies {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.625rem;
+  padding: 0.3125rem 0.625rem;
+  overflow-x: auto;
+}
+
+.technologies li {
+  list-style: none;
+  background-color: var(--grey-color);
+  color: var(--lighter-color);
+  border: none;
+  border-radius: 0.3125rem;
+  padding: 0.3125rem 0.625rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 129.4%;
+}
+
+/* Custom micro scrollbar */
+.technologies::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.technologies::-webkit-scrollbar-track {
+  background-color: var(--grey-color);
+}
+
+.technologies::-webkit-scrollbar-thumb {
+  background-color: var(--lighter-color);
+}
+
+.technologies::-webkit-scrollbar-thumb:hover {
+  background-color: var(--lighter-color);
+}
+
+.technologies::-webkit-scrollbar-thumb:active {
+  background-color: var(--lighter-color);
+}
+
+.technologies::-webkit-scrollbar-thumb:vertical {
+  border-radius: 0.3125rem;
+}
+
+.technologies::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 0.3125rem;
+}
+
+.technologies::-webkit-scrollbar-corner {
+  background-color: var(--grey-color);
+}
+
+.technologies::-webkit-scrollbar-button {
+  display: none;
+}
