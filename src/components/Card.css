@@ -22,7 +22,6 @@
   width: 100%;
   height: auto;
   transition: all 0.3s ease-in-out;
-
 }
 
 .info {
@@ -48,11 +47,14 @@
 }
 
 @media screen and (min-width: 768px) {
+  .card__content {
+    width: auto;
+  }
   .info {
     flex-direction: row-reverse;
   }
 
-  .info img{
+  .info img {
     width: 50%;
   }
 }
