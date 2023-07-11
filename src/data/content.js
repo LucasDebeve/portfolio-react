@@ -114,13 +114,13 @@ export const content = {
       id: 13,
       category: [4],
       name: "PyCharm",
-      img: "./assets/img/pycharm.png",
+      img: "./src/assets/img/pycharm.png",
     },
     {
       id: 14,
       category: [4],
       name: "PhpStorm",
-      img: "./assets/img/phpstorm.png",
+      img: "./src/assets/img/phpstorm.png",
     },
     {
       id: 15,

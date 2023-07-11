@@ -48,6 +48,13 @@
   cursor: pointer;
 }
 
+.multi-filters__items .multi-filters__item img{
+  width: 4em;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  border-radius: 0.3125rem;
+}
+
 
 .multi-filters__item a {
   color: var(--lighter-color);
